@@ -1,8 +1,31 @@
 <template>
-  <nav>
-    <router-link :to="{ name: 'home' }">Home</router-link> |
-    <router-link :to="{ name: 'auth' }">Auth</router-link> |
-    <router-link :to="{ name: 'firebase' }">Firebase Auth</router-link>|
+  <nav class="bg-white shadow-md p-4 flex items-center justify-center m-4">
+    <div
+      class="p-2 cursor-pointer hover:bg-blue-300 hover:text-white rounded-md"
+    >
+      <router-link :to="{ name: 'home' }">Home</router-link>
+    </div>
+
+    <div>|</div>
+    <div
+      class="p-2 cursor-pointer hover:bg-blue-300 hover:text-white rounded-md"
+    >
+      <router-link :to="{ name: 'auth' }">Auth</router-link>
+    </div>
+
+    <div>|</div>
+    <div
+      class="p-2 cursor-pointer hover:bg-blue-300 hover:text-white rounded-md"
+    >
+      <router-link :to="{ name: 'firebase' }">Firebase Auth</router-link>
+    </div>
+
+    <div>|</div>
+    <div
+      class="p-2 cursor-pointer hover:bg-blue-300 hover:text-white rounded-md"
+    >
+      <router-link :to="{ name: 'social' }">Social Auth</router-link>
+    </div>
   </nav>
   <router-view />
 </template>

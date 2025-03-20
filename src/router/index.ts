@@ -7,11 +7,13 @@ import {
   createWebHistory,
   type RouteRecordRaw,
 } from "vue-router";
+import SocialView from "../views/SocialView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   { path: "/", name: "home", component: HomeView },
   { path: "/auth", name: "auth", component: AuthView },
   { path: "/firebase", name: "firebase", component: FirebaseView },
+  { path: "/social", name: "social", component: SocialView },
 ];
 
 const router = createRouter({ history: createWebHistory(), routes });
