@@ -9,10 +9,10 @@ class AuthService {
     this.error = ref("");
   }
 
-  getJwt(): Ref<string> {
+  getJwt(): string {
     return this.jwt.value;
   }
-  getError(): Ref<string> {
+  getError(): string {
     return this.error.value;
   }
 
