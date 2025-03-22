@@ -78,7 +78,6 @@ let email: Ref<string> = ref("eve.holt@reqres.in");
 let password: Ref<string> = ref("cityslicka");
 
 const authStore = useAuthStore();
-console.log(authStore);
 
 const handleLogin = async () => {
   const response = await authStore.register(email.value, password.value);

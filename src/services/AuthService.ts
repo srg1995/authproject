@@ -33,7 +33,6 @@ class AuthService {
         }),
       });
       const response = await res.json();
-      console.log(response);
 
       if ("error" in response) {
         this.error.value = "login failed";

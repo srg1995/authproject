@@ -12,7 +12,6 @@ export const useAuthStore = defineStore("auth", {
   getters: {},
   actions: {
     async register(email: string, password: string) {
-      console.log(email, password);
       this.user.email = email;
       this.user.password = password;
 
@@ -21,7 +20,7 @@ export const useAuthStore = defineStore("auth", {
         this.user.email,
         this.user.password
       );
-      console.log();
+
       if (response.status === 200) {
         this.user.token = response.data.token;
         return true;

@@ -50,7 +50,6 @@ router.beforeEach((to, from, next) => {
   useAuthStore;
   const auth = useAuthStore().user.token;
   const needAuth = to.meta.requireAuth;
-  console.log(auth);
 
   if (needAuth && !auth) {
     next("auth");
