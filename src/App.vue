@@ -26,6 +26,13 @@
     >
       <router-link :to="{ name: 'social' }">Social Auth</router-link>
     </div>
+
+    <div>|</div>
+    <div
+      class="m-1 p-2 cursor-pointer hover:bg-blue-300 hover:text-white rounded-md"
+    >
+      <router-link :to="{ name: 'dashboard' }">Dashboard Auth</router-link>
+    </div>
   </nav>
   <router-view />
 </template>

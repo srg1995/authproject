@@ -60,7 +60,7 @@
       <div class="mt-6 flex items-center justify-center">
         <button
           class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          @click.prevent="authUser"
+          @click.prevent="handleLogin"
         >
           Accede
         </button>
@@ -71,18 +71,19 @@
 
 <script lang="ts" setup>
 import { ref, type Ref } from "vue";
-import AuthService from "../services/AuthService";
+import { useAuthStore } from "@/stores/Auth";
+import router from "@/router";
 
 let email: Ref<string> = ref("eve.holt@reqres.in");
 let password: Ref<string> = ref("cityslicka");
 
-const authUser = async () => {
-  const authService = new AuthService();
-  const success = await authService.login(email.value, password.value);
-  if (success) {
-    alert("Login correcto");
-  } else {
-    alert("Login incorrecto");
+const authStore = useAuthStore();
+console.log(authStore);
+
+const handleLogin = async () => {
+  const response = await authStore.register(email.value, password.value);
+  if (response) {
+    router.push({ name: "dashboard" });
   }
 };
 </script>
