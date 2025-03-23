@@ -2,7 +2,7 @@
   <Header />
 
   <main className="flex-grow m-4">
-    <div className="container mx-auto bg-blue-50 h-full">
+    <div className="container mx-auto bg-blue-50 h-full inline-block">
       <slot name="section"></slot>
     </div>
   </main>

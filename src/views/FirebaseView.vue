@@ -7,7 +7,7 @@
         >
           FIREBASE VIEW
         </h1>
-        <Transition name="fade" appear>
+        <Transition>
           <div
             v-if="showInfo"
             :class="{
@@ -133,14 +133,14 @@ onMounted(() => {});
 </script>
 
 <style scoped>
-.fade-enter-from,
-.fade-leave-to {
+.v-enter-from,
+.v-leave-to {
   opacity: 0;
   transform: translateY(20px);
 }
 
-.fade-enter-active,
-.fade-leave-active {
+.v-enter-active,
+.v-leave-active {
   transition: all 1s ease;
 }
 </style>
