@@ -96,4 +96,16 @@ const handleLogin = async () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Estilos de la transición */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+</style>

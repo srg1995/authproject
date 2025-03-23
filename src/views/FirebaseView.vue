@@ -7,18 +7,20 @@
         >
           FIREBASE VIEW
         </h1>
-        <div
-          v-if="showInfo"
-          :class="{
-            'flex justify-between text-red-500 rounded border border-red-500 m-4 p-4 text-center bg-red-100':
-              isErrorMessage,
-            'flex justify-between text-green-500 rounded-md border border-green-500  m-4 p-4 text-center bg-green-100':
-              !isErrorMessage,
-          }"
-        >
-          <p>{{ messageInfo }}</p>
-          <button class="cursor-pointer" @click="handleAlert">X</button>
-        </div>
+        <Transition name="fade" appear>
+          <div
+            v-if="showInfo"
+            :class="{
+              'flex justify-between text-red-500 rounded border border-red-500 m-4 p-4 text-center bg-red-100':
+                isErrorMessage,
+              'flex justify-between text-green-500 rounded-md border border-green-500  m-4 p-4 text-center bg-green-100':
+                !isErrorMessage,
+            }"
+          >
+            <p>{{ messageInfo }}</p>
+            <button class="cursor-pointer" @click="handleAlert">X</button>
+          </div>
+        </Transition>
         <form>
           <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
@@ -111,18 +113,34 @@ const authUser = async () => {
         "Login erroneo" + " - " + error.code + " - " + error.message;
       isErrorMessage.value = true;
       showInfo.value = true;
+    })
+    .finally(() => {
+      handleTimeOut();
     });
+};
+
+const handleTimeOut = () => {
+  setTimeout(() => {
+    showInfo.value = false;
+  }, 5000);
 };
 
 const handleAlert = () => {
   showInfo.value = false;
 };
 
-onMounted(() => {
-  setTimeout(() => {
-    showInfo.value = false;
-  }, 9000);
-});
+onMounted(() => {});
 </script>
 
-<style scoped></style>
+<style scoped>
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 1s ease;
+}
+</style>
