@@ -1,35 +1,40 @@
 <template>
-  <section class="max-w-xl mx-auto py-12 px-4">
-    <h1
-      class="text-center text-4xl font-extrabold text-gray-600 tracking-tight sm:text-5xl"
-    >
-      SOCIAL AUTH VIEW
-    </h1>
-    <div className="flex flex-col gap-4 p-6">
-      <button
-        className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
-        @click="loginGoogle"
-      >
-        Login with Google
-      </button>
-      <button
-        className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
-        @click="loginFacebook"
-      >
-        Login with Facebook
-      </button>
+  <MainLayout>
+    <template v-slot:section>
+      <article class="max-w-xl mx-auto py-12 px-4">
+        <h1
+          class="text-center text-4xl font-extrabold text-gray-600 tracking-tight sm:text-5xl"
+        >
+          SOCIAL AUTH VIEW
+        </h1>
+        <div className="flex flex-col gap-4 p-6">
+          <button
+            className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+            @click="loginGoogle"
+          >
+            Login with Google
+          </button>
+          <button
+            className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+            @click="loginFacebook"
+          >
+            Login with Facebook
+          </button>
 
-      <button
-        className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
-        @click="loginGithub"
-      >
-        Login with Github
-      </button>
-    </div>
-  </section>
+          <button
+            className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+            @click="loginGithub"
+          >
+            Login with Github
+          </button>
+        </div>
+      </article>
+    </template>
+  </MainLayout>
 </template>
 
 <script lang="ts" setup>
+import MainLayout from "@/layouts/MainLayout.vue";
 import {
   getAuth,
   GoogleAuthProvider,
