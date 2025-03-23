@@ -5,6 +5,8 @@ import router from "./router";
 import { initializeApp } from "firebase/app";
 import { createPinia } from "pinia";
 import VueCookies from "vue-cookies";
+import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBz9WA3FpX6nQq8N4G_n6DSpiJa3H55anE",
   authDomain: "authproject-2bdef.firebaseapp.com",
@@ -15,6 +17,8 @@ const firebaseConfig = {
 };
 
 const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
+
 const app = createApp(App);
 initializeApp(firebaseConfig);
 

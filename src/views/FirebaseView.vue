@@ -93,7 +93,7 @@
 
 <script lang="ts" setup>
 import MainLayout from "@/layouts/MainLayout.vue";
-import { onMounted, ref, type Ref } from "vue";
+import { onMounted, ref, watch, watchEffect, type Ref } from "vue";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 let email: Ref<string> = ref("sergiosac@sergio.com");
 let password: Ref<string> = ref("112233");

@@ -16,7 +16,7 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "home",
     component: HomeView,
-    meta: { requireAuth: false },
+    meta: { requireAuth: true },
   },
   {
     path: "/auth",
