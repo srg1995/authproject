@@ -8,9 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineComponent } from "vue";
 import UserList from "@/components/UserList.vue";
-
 const props = defineProps(["content"]);
 </script>
 

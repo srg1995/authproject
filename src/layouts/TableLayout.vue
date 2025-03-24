@@ -32,7 +32,6 @@
 
 <script lang="ts" setup>
 import UserTable from "@/components/UserTable.vue";
-
 const props = defineProps(["content"]);
 console.log(props);
 </script>

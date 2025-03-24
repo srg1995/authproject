@@ -49,13 +49,12 @@
 </template>
 
 <script lang="ts" setup>
-import MainLayout from "@/Layouts/MainLayout.vue";
+import { User } from "@/interfaces";
+import MainLayout from "@/layouts/MainLayout.vue";
 import {
   Ref,
   ref,
   defineAsyncComponent,
-  ComputedRef,
-  computed,
   onMounted,
 } from "vue";
 
@@ -70,14 +69,15 @@ const tableLayout = defineAsyncComponent(
 );
 const layout = ref(listLayout);
 
-const handleLayout = (cmp) => (layout.value = cmp);
+const handleLayout = (cmp: any) => (layout.value = cmp);
 const search: Ref<string> = ref("");
 
-const hanldeSearch = () => {
-  filteredUsers.value = users.value.filter((item) =>
-    item.name.toLocaleLowerCase().includes(search.value.toLocaleLowerCase())
-  );
-};
+interface UserData {
+  id: number;
+  name: string;
+  age: number;
+  position: string;
+}
 const users = ref([
   {
     id: 1,
@@ -105,8 +105,12 @@ const users = ref([
   },
 ]);
 
-let filteredUsers = ref([]);
-
+let filteredUsers: Ref<UserData[]> = ref([]);
+const hanldeSearch = () => {
+  filteredUsers.value = users.value.filter((item) =>
+    item.name.toLocaleLowerCase().includes(search.value.toLocaleLowerCase())
+  );
+};
 onMounted(() => {
   filteredUsers.value = users.value;
 });

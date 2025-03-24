@@ -8,9 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineComponent } from "vue";
 import UserCard from "@/components/UserCard.vue";
-
 const props = defineProps(["content"]);
 </script>
 

@@ -53,6 +53,7 @@ const handleNote = () => {
 };
 </script>
 
+<style scoped>
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
@@ -64,3 +65,4 @@ const handleNote = () => {
   transition: all 0.3s ease;
   color: green;
 }
+</style>
