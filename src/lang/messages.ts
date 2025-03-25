@@ -9,4 +9,9 @@ export const messages = {
       HOME_VIEW_TITLE: "VISTA HOME",
     },
   },
+  fr: {
+    message: {
+      HOME_VIEW_TITLE: "VUE D'ACCUEIL",
+    },
+  },
 };
