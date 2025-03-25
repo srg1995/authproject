@@ -6,6 +6,8 @@ import { initializeApp } from "firebase/app";
 import { createPinia } from "pinia";
 import VueCookies from "vue-cookies";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
+import { createI18n } from "vue-i18n";
+import { messages } from "./lang/messages";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBz9WA3FpX6nQq8N4G_n6DSpiJa3H55anE",
@@ -22,8 +24,15 @@ pinia.use(piniaPluginPersistedstate);
 const app = createApp(App);
 initializeApp(firebaseConfig);
 
+const i18n = createI18n({
+  locale: "es",
+  fallbackLocale: "es",
+  messages,
+});
+
 app.use(pinia);
 app.use(router);
 app.use(VueCookies);
+app.use(i18n);
 
 app.mount("#app");

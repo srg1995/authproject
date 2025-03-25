@@ -5,7 +5,7 @@
         <h1
           class="text-center text-4xl font-extrabold text-gray-600 tracking-tight sm:text-5xl"
         >
-          HOME VIEW
+          {{ $t("message.HOME_VIEW_TITLE") }}
         </h1>
         <div name="mouse" tag="div" class="m-4 flex gap-2 justify-center">
           <p class="border p-2 text-center">Mouse position(x): {{ x }}</p>
@@ -39,6 +39,7 @@
 
 <script lang="ts" setup>
 import useMouse from "@/composables/useMouse";
+import { messages } from "@/lang/messages";
 import MainLayout from "@/layouts/MainLayout.vue";
 import { Ref, ref } from "vue";
 
